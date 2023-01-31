@@ -1,0 +1,316 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Table" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="art" Type="InArgument(x:Boolean)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1121,4987</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="44">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>DocumentFormat.OpenXml.Drawing.Charts</x:String>
+      <x:String>DocumentFormat.OpenXml</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="57">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>DocumentFormat.OpenXml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="602,4922" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="https://www.dns-shop.ru/" Name="strURL" />
+      <Variable x:TypeArguments="x:String" Default="Санкт-петербург" Name="strSity" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: DNS – интернет магазин цифровой и бытовой техники по доступным ценам." sap:VirtualizedContainerService.HintSize="540,2381" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="89d91bdf-74ee-459f-b0c5-833f3618a00e" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Сделать" sap:VirtualizedContainerService.HintSize="400,2164" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Default="RTX 3080" Name="strVideoCard" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ClickType="Single" DisplayName="Выбор Города" sap:VirtualizedContainerService.HintSize="338,193" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89d91bdf-74ee-459f-b0c5-833f3618a00e" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.dns-shop.ru/" DesignTimeRectangle="394, 176, 71, 21" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Белогорск'" FullSelectorArgument="&lt;webctrl class='city-select__text_BTU' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='city-select__text_BTU' tag='SPAN' type='' aaname='' /&gt;" Guid="0877ca8b-324b-4735-89bf-8c64784bbbf1" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEsAAAAZCAYAAAB5CNMWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGuSURBVFhH7ZTtjcMwCIZvwmzTrNLsUeX/bVBli3QKXwA7BkycIFUn9Y5X8o/EmBcef3yl0GUFLIcClkMBy6GA5VDAcihgOVRhveY0DkMamjGlJYf8dylYY5pf+TvUKGA55If1nOQ1vfNLuqSJz8G4zWnNs6DlLuenZ55AddZ3fdc03yCXWi9iNjVPTXliaB2vheqUT9DJm6XgYcH8H5mMj4IDvuv8+hgFLCyAwzvIJwFuOvUlWCIm97PH6G8h5Yt+7VvdPVnYLEsCzWozjNl3sAfLBoEAxfqzmCzRUIalYvjm6I2TYr4Zqq4BdHINeRFl94xRisQcdUdEgWZ+3YQFi3ybEyHy2TE8twl8V/G1oRe5YdnHOOvDYZXNt04V6BKsUkTfcBNcjb3xKyB0zisxWcY11LD4OlmLVvXFuANgXVhoxh86LPCYPMTzgnWBdj7uacNqfSmuehmwdG7srwVKkr4ETB+cBhY0w4a1E7lwPsbHN5rpeGs3CVgdEswBLJD2FSeNYIl5o1mrdvJqfUud/F+F9dGyr+G7FbAcClgO/RFYv6OA5VDAcihgXVZKPw9Igw55XJdSAAAAAElFTkSuQmCC" InformativeScreenshot="8824a2eb008c7ba57fc206a465bae269.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='DNS – интернет магазин цифровой и бытовой техники по доступным ценам.' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive" WaitForReadyArgument="Complete">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="368, 178, 18, 18" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl tag='SPAN' class='city-select__icon_Ycp' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' class='city-select__icon_Ycp' type='' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE7SURBVDhP1ZKxi8IwFIfvPy2CpZCpCIpwUyeX4NKlOMTBzUEHyXpQODocBalQHMSpi10KQkAKhZ+JzQ3XtOWEG85v+r3Hex8hyRv+iFcSVQXOhxhhGCI+nFFUut9Bq0ikK7iWC38nJV9StvMf9SoVesLEFOUck2GARO+U17IOIkEwnIDnddmkISoRzS2wVEa1SCzYjg2LaHHKYM0jOWXSEMnlAcNRpuOS1EKFFJDlows2kNK6+wNTNOa4qLTQJ1OokyzU+gV8/CtRhrVDEd1kzEPMCIFHPRAyQ6ju5haBOms5ZWJcdrZx4X0UdVGVEFeBUj+9+KRwN22aFhFEDJ/4iJsv3dXXmCKJ2Aewp1tk35+wyrCd2gj2z/wjjYgDkBFDkiVgI9IrUXSKFOLEQd8p+KlfougVPcN/EwF3dv3LbUtZ6CgAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="Целевой объект проверки" Mode="Appears" Retry="True">
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBefore="2" DisplayName="Ввод названия города" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="89d91bdf-74ee-459f-b0c5-833f3618a00e" Text="[strSity + &quot;[k(enter)]&quot;]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.dns-shop.ru/" DesignTimeRectangle="594, 291, 799, 42" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='base-ui-input-search__input_YOW' aaname='' /&gt;" Guid="638e5e29-45bc-45ff-8af3-ced5084ce600" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAyMAAAAuCAYAAAA7pcaGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAN/SURBVHhe7dvZbepAGIDR9C8KCBW4BGoIRdAD6xPSXLzBzDA2XBLsB84vHSV4IYEnfxr7KxhjjDHGGGPMDPO12+0CAADAXzscDuF0OoXz+dzlRzpiBAAAeIvtdtv87KMkHzECAAC83X6/D8fjscuQdsQIAAAwiTpI4hUSMQIAAEymvmWrf4ZEjAAAAJPqV0fECAAAMJn6ofZ6dUSMAAAAsxAjAADALMQIAAAwCzECAADMQowAAACzECMAAMAsxAgAADALMQIAAMxCjAAAALNIY2SzCsvFMqw26UGNnyosFlVY59tHrKtFWFTr7vUmrL4Xofq5Pw4AAPg8b42R3W4dqsUlSDrL1aZwDAAA8IneHCMAAABlL8fIZrW8rnj04luwmv3fq7DpXl/fo9mWrpjk7zF+brQtMvb/NLeLFbY3uvddJ+cXvoPm80fvc739rNfehpYcI94AAGDQyzHyaP99UHQBkgVFKTyePTdWDJiLJkTi7c3/GX3GPjKiuGjjJfqs+Tnd/5PedpY9E/Po+wIAgA9XiJH6QnzIyMV1FjJpHLQX6svvZ8Lj+XNj5RhpoyFZCblIHqy/C42L7ntIVlbylZC72Kj/Vh45YgQAAIYUYiS7MO/dXVyP35YUx0Hz++Vi/nF4/N+5seL+gc+THFuMhjhiuhjKH77P3zt/LUYAAGDUizHShUi8WtCcW4iRaHspGEa3PTg3Vtw/8HmSY/8qRvL3ESMAADDqxRgp3P4UhUP9ur3gr0L1fXu/UjAMb3t8bqy8/9nbtLJoyL6HZ27Tav5+fIwYAQCAUS/GSL4y0t+ylV2cX0IgXlEoBcPgtifOjQ3tf/gw+l00FFZ9mmPiqGkj5/b/teck0SNGAABg1IsxctEcW1/o1+pz6gvy27lNHGSrCYPhUdr2xLnP7m+D5OY+GtL9+d8uHnc9pg2TZF9i4PsEAIAPl8bIJ/r1CkYdI0Pnp4EGAADciJG/iJGRFZt1JUYAAKBEjPw6RgAAgFeIEQAAYBZiBAAAmIUYAQAAZiFGAACAWYgRAABgFmIEAACYhRgBAABmIUYAAIBJbbfbcDgcxAgAADC90+kkRgAAgGnVqyLn81mMAAAA09nv99dVkXrECAAA8HZ1iByPxy5D2hEjAADAW9QPq9c/61uz4hWRfsQIAADwFn2E9M+I5PPV/TTGGGOMMcaYCSeEf35RwJKtkvsFAAAAAElFTkSuQmCC" InformativeScreenshot="ac4a70fc31b9f44b7934cfcd6a8ece3a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='DNS – интернет магазин цифровой и бытовой техники по доступным ценам.' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" WaitForReadyArgument="Complete">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="544, 291, 39, 42" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl parentid='select-city' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='select-city' tag='SPAN' type='' class='base-ui-input-search__icon_oRx base-ui-input-search__icon_search_N2w base-ui-input-search__icon-location_left_ikg' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACsAAAAuCAYAAACxkOBzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIvSURBVGhD7Zlda9swFIb3//9M6mrY4AU3NquybvVwigMZhcZleGY2ROTzKvBOspPizCeLL6xVhgiem7wSPBwpPsb6gB4NUna/32O322Gz2WC1WhlDQ7YuuVwuGwvekxPZ7XaL9XpNTjSBN1lVUZNFFaWsOqOmnU+KUlZVlQpNo5RVVTXtz0RRylKBiVxldXGV1cV/khUoshRpmqEQVN4OrbKL1wiBy2ANBhjUsD66CKIEC2LNv9Akm2PGnUruhsEdcYRRhEgSjn247CDu3GP2m1pPo0G2QDxipQzzY2TktgtkUx9MCTMPk5bCncsWU6/cdns8hyDyOuKFw5ZzrbsYBZH/TceyKR4cWS2bIyHzJsnYlrvAcP9M53W6lU2qSrnfCzqnyEO45U4kdF6jW9knT1bJBk+I7CwJuC13w5sQ2SlXWf5CZGeZv5Ns+ghHnj/na0rnFOlDtebb5TXdyspmEH6SVbr1MW3VVgWmviV3w8FjSuWndCxbe3bKbc2JvE4uj416JrPPzxefyYrOZVW15l+qVmu5HLNfojlHZJiN3cM7g4XhJG/OIdAgqxD4OfGqdqqknSH8kV8xdGDdVL+zO45ANRHZFLyny8KaZA8sEsTqxcVW57ISHNwyOB5H/Lqo5oh51fVaCOuVbUtLYTNkFTXh4AeRS8yRVUjhMAgQnemAZsle4Cqri6usLvon26tPnr36mNyrz/Rq9OYC5Dh6c7V0HL25tDuO3lyHmjuAP+YZc/OBaus/AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Ввод необходимой видеокарты" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="89d91bdf-74ee-459f-b0c5-833f3618a00e" Text="[strVideoCard + &quot;[k(enter)]&quot;]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.dns-shop.ru/" DesignTimeRectangle="670, 176, 526, 64" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='search' class='presearch__input' aaname='' /&gt;" Guid="2ee74528-6b01-4203-9822-983b79055982" ImageBase64="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" InformativeScreenshot="1a475d37eabeca0ab8fa772e13d4e041.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='DNS – интернет магазин цифровой и бытовой техники по доступным ценам.' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="670, 131, 63, 21" ElementType="Text" FriendlyName="'Акции'" FullSelectorArgument="&lt;webctrl tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' type='' class='header-top-menu__common-link' aaname=' Акции ' check:innerText='Акции' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEMAAAAZCAYAAABq35PiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGvSURBVFhH7ZUxTsQwEAD5Bi+g5SX+TfIIoE96KoSoTil4xZEHUNHkCgpEA9cs9nqd7Nq+kKAQgbIjWRc7Ods7XttnoPSoDIbKYKgMhspgqAyGymDkZexrMFVLle2QldFWBoypYWs6UhmHBkororZCyl1HjdsgkdHtSjBFAy39Sh0t1MZAvaeqRWSR215RRoX+Qj9xHXH/69s6aIp0Idw4Jxfn8w3g5dF+dAPwfE+N84lksIlghpTQHOgVEsmIg/+RDN/nqAzsd0RGew1we+7L3QXA0xXA8Z1eTkfKiILBVRcHKZOBsmSWzJdBgReZthA4LUqZyZaeh8tBRigfr/RyOkJGEnwSXJDhJ5zcODNl4LPtIysIA/fPYbwVZVC6Zsqw+vIbkRWOOTLooHbfnpIRZPG2LItvExcIm3QAs6VvH7YJTjQWMlmGva3s1gjnUVZGVdutkQrKsuwBOjKYOEjZmWHxQtghO1WG7YOPlZMh+v1OxkJ4GRhEfHMEaHI4WSnD4a9WasN+fD0tbEtEZ01Ohsi4VWX8Ok6izJi/iMpgrCTjf6AyGCqDoTIYKqMH4AuaDvOuV4EFAQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ClickType="Single" DisplayName="Флаг 'Отсутствующие в продаже'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89d91bdf-74ee-459f-b0c5-833f3618a00e" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.dns-shop.ru/search/?q=RTX+3080&amp;category=17a89aab16404e77" DesignTimeRectangle="385, 686, 16, 16" DesignTimeScaleFactor="1" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl class='ui-checkbox__box' idx='5' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='ui-checkbox__box' type='' tag='SPAN' aaname='' /&gt;" Guid="02bd61e2-d9e6-42e3-86ad-b1648dfc6d2b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADVSURBVDhPtdQ7CgIxEAZgO0/gVbyEveABPInYCZY2a7udsLA3sLIQS4u9iM1OxvzRLIl5EmLghzxmPlJkd8avgWvmv6B4npm6NY+HBY/7eTyyBrXoMY0JxEEW9BvZY6ITqG7ma8gIeh2w6HY6stcFfYWB0GXD4tFYe8UgMD0w1/tFoImJ29E6S4LULO11BEOiIF13qpH67WedwJAsEEPcT99ZGEOiIGKiGDEMSYKIRlMY4oKBh03tyrtvxfewq3961X8OGlU3zYFlDWpNDLHAGqkMDvwG6V3jOTpKESYAAAAASUVORK5CYII=" InformativeScreenshot="cb6b2eb0f1f73f75732efce6a75cfe59.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='RTX 3080 - DNS – интернет магазин цифровой и бытовой техники по доступным ценам.' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="408, 689, 184, 11" ElementType="Text" FriendlyName="'Отсутствующие в продаже'" FullSelectorArgument="&lt;webctrl aaname='Отсутствующие в продаже' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Отсутствующие в продаже' tag='SPAN' type='' class='' check:innerText='Отсутствующие в продаже' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAALwAAAAPCAYAAABeF6VwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOYSURBVGhD7Vc7dhsxDMyddCSXek9HcJHCnZ9q3yCFChe+hNypdenafcoNAfADDMBdKh8petpiXkwuCAwGw9Xm2/TzY1qx4l6wGn7FXcEb/vg4bTYbhYfp9RNiVqy4URjDfx0e2OT7owrKF2B3eG97K1bcKJrhP1+mHZo9Qy7C43SC/RUrbg3V8LOmVpeh/Ao4bF+mLxXbnqWc+VcCL9Ppmc59n55MfEOJ5zi1vzv8mPZqrcFn3GdZQuE3y4Vi3qfXrf1Fw57NWc6ndDt3TWDNYC/zrHh+a88QGEso/YZ46+inPl8pZ8pxMr37z1ucDerq/ZCgeon8JDlkDk471ZecVZywVqCBNXxXJBHIftbInmkwF4w+f5qhyp4/H3EQQcEMCiFvZyrLf56LNbyIqnLlHitvrHXuujdYY65IfwWXcyE+0F76AsOnGG1OnIXT0fFO4LxwZvHyduLpWamHPeNciq5Qqxrem0DDv/Ui0WYvDYqBhBP8+WAwgCHDh8PscdG9Rn0HQ9C1zlxTrt3WXireg5rcZ88oWAP7dRg1POQwpopnY7QhUB41H/cc4bhLHdaj5Ar6C/WB2oS/+oafb8aaJyLoOCwOrsObh5W4KNjBzHGRZ/2zEM+1xg1u1vQ3cTcxvn5FT1s+b2ORs8Wo4RVvhjrXmQ3OA9feI1G/WDeIAS04r35eAN5o/2kNG8zg5lDEcw2vm5cGcCgozp8ZXvci9fSF7XPRsQM8sdbwmvTLvZkYz3URWGMxx+UMj56wa+FpPMN5bd16hjhxbuGh+1vyXkEzfDZ1JBI3Mde8jkPzGeQhH31TBH8+GAwgrBkMK84dcbFmISFREyMu1hpc71OO2hfEjA6vAmskzM8i0HXE8CYmno3l7l8Y9nmPB+qVa9LfuSfuT/Gd77ehGT5BkgABLhhdhB7Z+NIUsIHomzUYaESaBULhFcJG3bDiN17MBWK14LReMsbQGgzdiUEzdYHnO/02/I7hJafm7WbDZ1ArnQMNjznzup4RnmYWddZwdsB7BGN4Rha7QTVgEN9wfz6+FNEw41taRFBQMX3DwxltsIKQi9QzwkE+Ex/V6oDPUfziBS179nx3mBGHqN+KUcMv5xTTN9Sc0XmNokGegexTfdKf/hWORivKqddocpMrAzh7w/9rIOlr4mJc5BLZi/Wfgw0Ll/Ac0PnepSNjXskDFzZ88Pa8Gi7Lhd6E92b4vrbp7X0Vw39MvwD8WLKWNGqoUwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ClickType="Single" DisplayName="Флаг 'Под заказ: позже'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89d91bdf-74ee-459f-b0c5-833f3618a00e" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.dns-shop.ru/search/?q=RTX+3080&amp;category=17a89aab16404e77" DesignTimeRectangle="385, 647, 16, 16" DesignTimeScaleFactor="1" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl class='ui-checkbox__box' idx='4' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='ui-checkbox__box' type='' tag='SPAN' aaname='' /&gt;" Guid="a4d3bdb9-4540-48cb-a267-f3809a49ea98" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADjSURBVDhPrZQxDsIgGIXdvIyzl/AELm6exDg7dunsZjp4Ap0cjLOjZ3AwMRb+8mwfKRWoVb7kJUD5v1BKGUliPoWvh8jz3nQiYA7mdnCE+nYQVSykXI+/Cuaipo0V6mshZTbxFkZjalBLrHDIyrpBLamFZj9+Wh1jarnvdoXeiYGo3Vz0JXfGyGAhZARtjpNBwrZMnzbOMxIUqnzq9iMyhHiF6rh6j6n9su73yBASFQJ9zppWWIaQ8Cu3pCAmQ0j0o1DaJ0NILYwcbLWdeced+A522l/PkPxyAEmvL0vKC/Z/RCr4Gf5t9IfnigAAAABJRU5ErkJggg==" InformativeScreenshot="faa968f4956ec6bbfb25a33565c88809.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='RTX 3080 - DNS – интернет магазин цифровой и бытовой техники по доступным ценам.' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="408, 650, 120, 11" ElementType="Text" FriendlyName="'Под заказ: позже'" FullSelectorArgument="&lt;webctrl aaname='Под заказ: позже' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Под заказ: позже' tag='SPAN' type='' class='' check:innerText='Под заказ: позже' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHwAAAAPCAYAAAAmqKvRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJBSURBVFhH7VaLbQMhDO1ON1dulVM2uUwSZYxI2YHiD2Abw32aNGpzT0IqZ5tn+xnSr3Dgo3AI/mEogt/nMA5DGFrrfGPHA38ZRvAxzHfeC9zOh+D/BYfgH4bdguM38eRPVzYkeD8RzaF5hPlkfIcpZO/rZGxDGC8PNkagXfjHvybwQ76fnf24jPGb35fMUy3jb3txmmNWjCZ/ytvkKmKr3Ho8jF2C475K2iuyJLvtlaBGKlElbK5G8CWunp2aWM6ivTPQCMpT2WxuLELxYSFX8qtcpeCm5rU8OwR3ioyommimcUkEDeDwcyGYHETxtmEe0MeZfgDaNuXZF9zl6vS65icOHP7UUyfezdtoANgueMPPFmb3awTHmFhcedYKMJ5ttEQOSXDMrR5GytnEO00lW39YNJYF9+u2cUv8zs+SObPuD6/fEtwW6hfegn6OMFYlDg2ygkcfXKZhzhC4tyEBz/L7UONZggs4/PmMfGMpXl6Ktf190ZNOgkmftQkllAGis/SN9wQHodNNEKJnW0FX8EZ9Phxf00d7ERCdXldnygHIgvO5SzwO9v/TVjVVxOJZusnbBO/fcOIXfEpUjk3+mItoIO+buZhabGM1lgVPfGVgdW0VFD+dn2OF4NU5FY+PXYIDqOll6YnUNrXcKUw3UyzFR4UnG3ABv+aUA5b86RuJxvHAD7WmPKp8dQ9SrBI1Y4XgABYjc8geNPm5Busr91ZkywPL6FYEfxYgqdb0ykYfeAteInj7WYlTewj+RoTwDZi4E8sAEXsgAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ClickType="Single" DisplayName="Флаг 'Под заказ: завтра'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89d91bdf-74ee-459f-b0c5-833f3618a00e" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.dns-shop.ru/search/?q=RTX+3080&amp;category=17a89aab16404e77" DesignTimeRectangle="385, 608, 16, 16" DesignTimeScaleFactor="1" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl class='ui-checkbox__box' idx='3' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='ui-checkbox__box' type='' tag='SPAN' aaname='' /&gt;" Guid="1fef91d7-38c2-42a8-8b02-1f5b6198b5cf" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADYSURBVDhPtZS7DcIwFEXpGIFNWIIJ6GESRIkoaVLTUaWgp6JATMAosR++Dtexke04yBzpSv68d+QoTmZSmf8K9esqqt1Id1hIt5/nY2pQix4fJ8RGkeg7pseXOqE9WayhIOglTvjT6RjTSwZhrDARdVmLfjbBGpkshIxgzHUySejL9P0Y7JGkUDXLcJ6RISQqVLedXVPttp+PyBCSFQL9OH1GaRlC0o/sSUFOhpDsS6F0TIaQQZi42Oq8iq4HiV3s6p9e9Z8DwIY9aYnY1KDWl4FAWIPKQpE3gIH+6fNFuy4AAAAASUVORK5CYII=" InformativeScreenshot="1e1b86cad883916641043ad167f55d8b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='RTX 3080 - DNS – интернет магазин цифровой и бытовой техники по доступным ценам.' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="408, 611, 123, 11" ElementType="Text" FriendlyName="'Под заказ: завтра'" FullSelectorArgument="&lt;webctrl aaname='Под заказ: завтра' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Под заказ: завтра' tag='SPAN' type='' class='' check:innerText='Под заказ: завтра' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAH8AAAAPCAYAAADNnxDSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJRSURBVFhH7VXtjcIwDL2dOhddpWITmAQxBhI75OKPNLZjp6X07gf0SZFo/fFsP6f8pANfi0P8L0YV/3FJ4zCkITrnOzse+BQY8cd0efCzwP18iP+JOMT/YmwWH9+Jv4XpxoYC728kXKBnupyM7zCl2fs2GduQxuuTjRloF/751wR+yPde7ud1zO/8uZBNx9Y5LPCWGtVhnvAvmOzIm3vTGizkPl1yRRqbxMdnmQwHaGIxXy3IW6AYVLwSWMLWasRf4urZSdCaqwjcLLeDZi4Gmpd6lHm9eK/WUlOdDy9ayE12O88N4rdFA5oiQRBRjNdEDODwayGYGoT4VjwP6BMMCm2r69SAHsOFzdC8do6+QLH4pkfvAgp4eV4XP/CzA7XPa8SnprKf2moCxrONjqihiI+1ObeU36t4VQsJQbb+4jSQue1CdXklp7VVhOK7XHYmOv/7Nz/wWxJ7jfgV/Bljf4xVzZovg2rUiMcCyIXAWqNaFm5QD7S8zL/Ia29+O0PAJvGdHiDPP332STzp4zXRQ23Q+xx64sPQeWnkAsy2Ci2Chd/fKjQC9HgdHkeD1eILPs++k/j83AxYxGIu3fhr4vdvPvF74gM4tvhjLWLI/BzWYnrBQQZzsSBfrmORd8+bT7lmca0e+LyT+AASoJ65CSYKj2mOUG6sOIqPmis24AJ+zSmXrfjTOxKF44Efei11NPXqGZRYKVKByotHL3yX1/TkxQNC8U2sFVbpA/HQp8lTxd8LDskM1fyBrUDxd5jjn4hvt7Aib/sh/tvYR/yUfgG9f6LF2uTycQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ClickType="Single" DisplayName="Флаг 'Под заказ: сегодня'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89d91bdf-74ee-459f-b0c5-833f3618a00e" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.dns-shop.ru/search/?q=RTX+3080&amp;category=17a89aab16404e77" DesignTimeRectangle="385, 570, 16, 16" DesignTimeScaleFactor="1" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl class='ui-checkbox__box' idx='2' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='ui-checkbox__box' type='' tag='SPAN' aaname='' /&gt;" Guid="1444e2a2-8413-4137-96a3-7a8d7f91d48b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADYSURBVDhPtZS7DcIwFEXpGIFNWIIJ6GESRIkoaVLTUaWgp6JATMAosR++Dtexke04yBzpSv68d+QoTmZSmf8K9esqqt1Id1hIt5/nY2pQix4fJ8RGkeg7pseXOqE9WayhIOglTvjT6RjTSwZhrDARdVmLfjbBGpkshIxgzHUySejL9P0Y7JGkUDXLcJ6RISQqVLedXVPttp+PyBCSFQL9OH1GaRlC0o/sSUFOhpDsS6F0TIaQQZi42Oq8iq4HiV3s6p9e9Z8DwIY9aYnY1KDWl4FAWIPKQpE3gIH+6fNFuy4AAAAASUVORK5CYII=" InformativeScreenshot="a1da2636e697ee34abe37af824e4cfe4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='RTX 3080 - DNS – интернет магазин цифровой и бытовой техники по доступным ценам.' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="408, 573, 131, 11" ElementType="Text" FriendlyName="'Под заказ: сегодня'" FullSelectorArgument="&lt;webctrl aaname='Под заказ: сегодня' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Под заказ: сегодня' tag='SPAN' type='' class='' check:innerText='Под заказ: сегодня' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIcAAAAPCAYAAADOBNy/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKESURBVGhD7VfRbQMhDO1ON1ezStRN0kmijBEpO1BsA2c/bC65S7/Ck5B6GOznx4O2X2liIsA0x0SI1Rz3SzotS1qi8XMrCyc+BWCOU7rcy7fC7Wea4xMxzTERYrc5eE792jlfS6DC+zUVGuyRLt+wdjmntvp6htiSTr+PEszguFqffzrTOq53LPfj95TnfF0Eff5VC4zpPIWjHt+XvCMDtavzCqi/yd3pkeHMdTmgzi5z8LdOxIVhL+dbyWCOMUQ4YwAN5AqNb9UaxcUMay75dszPKIfvHF6LqTo2t/QYXarOYMCXemj6bOjBgDnmonjjN2GHOfymOsGJjCq2dWAWVMPnIgAOqnE8XA+eEBUce5bnQDOJIQ/dl6+jy62rI4Zpe182h+zvXsjD5gjWYXL8fsYcvCcLRgNfDd5fYjIcMZhbL7hwhv2GixyUxMbGMvAOoYJjql4blbdvDl8nXAvfrjmwLo2VK9cZnBfh38yBTfpNR7BPKTaSZ7I4kRhwWI5hmGvEhXP5OnTYNMfIaAfMgWfgmgNqd3OS05jnsDmeagqevYzXzKHN1j+BwsETo5hKi+AINTRH0J+LgWbDGMOv491g9/D1ml3myFBzXt39f5B2B6D2ci5L5DVzjF8OqR+JUfbW9cwFb92AC/TCogW6dLUMRjFCYMLCb70MVgsC9W8uC57dhhEYsOdt5iDIAa2jNckkbMyMkZB6naknQtYY1aL6tqYWo66XOTngsp/qU6+VR8fXalD3dofYYLnxaNydvhrPwByEYpC2p2nm5bOD822Zo/T8/B+k7wIVjm6lPpSJHSBzRK8YXJg34F/Mgf9prMi3ZZrjAMgc8CIo0O1/nzlS+gO131WRM3O+MwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ClickType="Single" DelayAfter="2" DisplayName="Подтверждение фильтров" sap:VirtualizedContainerService.HintSize="338,158" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89d91bdf-74ee-459f-b0c5-833f3618a00e" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.dns-shop.ru/search/?q=RTX+3080&amp;category=17a89aab16404e77" DesignTimeRectangle="384, 885, 250, 40" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Применить'" FullSelectorArgument="&lt;webctrl aaname='Применить' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Применить' tag='BUTTON' type='' class='button-ui button-ui_brand left-filters__button' check:innerText='Применить' /&gt;" Guid="044c1f01-e5a9-40f3-99a9-751c13c98233" ImageBase64="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" InformativeScreenshot="0820b2d5d58a9779bce3727c617c1321.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='RTX 3080 - DNS – интернет магазин цифровой и бытовой техники по доступным ценам.' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="384, 933, 250, 40" ElementType="Button" FriendlyName="'Сбросить'" FullSelectorArgument="&lt;webctrl aaname='Сбросить' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Сбросить' tag='BUTTON' type='' class='button-ui button-ui_white left-filters__button' check:innerText='Сбросить' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAP4AAAAsCAYAAABFYAV1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM6SURBVHhe7d0xjuIwGIbhvRPXmDPACeAC3IKbUNPSUlJQAA0FFXRAhVcf4kc/xmYyIy3rOO8jWTtLEsMWr5MwK+VPANA5hA90UDb80+kU9vt92G63YbVaMRiMlgw1q3bVcE4yfB20Xq/D4XAIl8slXK/X+xYAJVOralbtqmG1nPIS/m63u+1M7EC7qWG1rKZjT+Frp9wKAaCdUl0/wtf9gC4NONMDdVHTatvf8z/C14qg+wIA9VHb/qz/CF/fBOpLAQD1Udtq3DzC168BuMwH6qS21bh5Ch9AvQgf6CDCBzqI8IEOInyggwi/5Y7HY5jP5/e/Ac0QfmE2m034+voKvV7vMSaTyX1rCOfzOYzH48c27Uv4+CnCL8h0Or3FvFgs7q8809l9MBhktwNNEX4h7Ez/LmotDP7sD/wW4RdCUesSXpfyOYpel/X+Ut8foyuC0WgUZrPZ0+2C5vbi24nU++q9bLufI/U5tVjpNf3/b12R+ONsaB8NbdfnxP9F+IVQaO/O5v7e3q4K7DU7zm4FfFza1x8TX1nEc4h+zgUah2/v6V+T3AJB+GUg/AKk4ovl9vExWYT+DB8flwpSi0G/37/9aXPYwhDzx9vcw+HwZU7CLxvhF0JhNgnfRy1NovVzp97HH+fnS/FB62fNlYo8F76//NeI/z34DMIvhAJ4dzYsLfzlcnn7PkHHpiJPvab5/b/RFoL48+LfI/xCKDTde8dhe9oWR+tjSoUfLxipIJssHkbHK3jNYYtDas7Ua/6zSvzZ8DmEXxAF8O7y1xYHi9Iitf1T0Wqbjy1eYCw+v6DoZ3+Ml/qM+vk34fsFB59F+IWxMO0eWMMHFG/3AVr4/thUwPEccaC2GPh5bB+9X3zV8ZPw/ZwafpHC5xB+RSx8YsJ3CL8ihI+mCL8ihI+mCB/oIMIHOojwgQ4ifKCDsuHzQA2gTtkHavAILaBe2Udo8dBMoF7Zh2bymGygTmo6+5hs0YrgVwUA7Zfq+il82e12t5048wPtpobVspqOvYQv2lmXBrov0JcCLAJAO6hVNat21XB8pjfJ8EX3AzpI3wTq1wAMBqMdQ82qXX9PH8uGD6BehA90Tgh/AUjqb5TRKO3DAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[Table]" DisplayName="Извлечение в БД" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&lt;Column xsi:type='DataColumn' Name='Полное наименование' ReferenceName='Column0'&gt;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&lt;Format xsi:type='TextColumnFormat' /&gt;&lt;/Column&gt;&lt;Column xsi:type='DataColumn' Name='Цена, руб' ReferenceName='Column1'&gt;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&lt;Format xsi:type='TextColumnFormat' /&gt;&lt;/Column&gt;&lt;Column xsi:type='DataNextLink' /&gt;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='text'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='text'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="338,158" sap2010:WorkflowViewState.IdRef="NExtractData_6" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="89d91bdf-74ee-459f-b0c5-833f3618a00e" Version="V3">
+              <uix:NExtractData.NextLink>
+                <uix:TargetAnchorable BrowserURL="https://www.dns-shop.ru/search/?q=RTX+3080&amp;category=17a89aab16404e77" DesignTimeRectangle="1369, 612, 65, 49" DesignTimeScaleFactor="1" FriendlyName="'A javascript'" FullSelectorArgument="&lt;webctrl idx='11' parentid='products-list-pagination' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='products-list-pagination' tag='A' class='pagination-widget__page-link pagination-widget__page-link_next ' aaname='' /&gt;" Guid="604dcb46-98b6-4c74-9489-acb8095160db" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEUAAAA1CAYAAAAXryboAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADjSURBVGhD7dsxCsJAGAXhvT8p7LXwBrYWNuIRApaChbBpkxRBkF/EFIZMvyvMBw805WDWNEnDMIRbLvV9H265FFoxCjAKMAowCjAKMAowCjAKMAowCjAKMAowCjAKMAowCjAKMAooG2UaY3rNnytSNEp33kazO8WjsjCFb58xbsdvmPtzvlSBCs6U+sJUctDWFaaSKB9dXPabaA7X+Xs5/lKAZwooHMV/nxWfU4hPtP/DKMAowCjAKMAowCjAKMAowCjAKMAowCjAKMAowCjAKMAowJegYKlt23DLpZxzuN/leAMsMIawQsBy+wAAAABJRU5ErkJggg==" ScopeSelectorArgument="&lt;html app='chrome.exe' title='RTX 3080 - DNS – интернет магазин цифровой и бытовой техники по доступным ценам.' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+              </uix:NExtractData.NextLink>
+              <uix:NExtractData.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="668, 376, 882, 4396" DesignTimeScaleFactor="1" FriendlyName="'ВидеокартыВидеокарта KF…'" FullSelectorArgument="&lt;webctrl class='products-list__content' parentid='search-results' tag='DIV' /&gt;" Guid="e37ddcf6-7b07-4455-8fb4-1c73121d3a7a" InformativeScreenshot="cd08862747435370bd78cfd521e9c832.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='RTX 3080 - DNS – интернет магазин цифровой и бытовой техники по доступным ценам.' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+              </uix:NExtractData.Target>
+            </uix:NExtractData>
+            <ui:WriteRange AddHeaders="True" DataTable="[Table]" DisplayName="Создание файла с данными" sap:VirtualizedContainerService.HintSize="338,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="[strSity]" StartingCell="A1" WorkbookPath="Primer.xlsx" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAALEgAACxIB0t1+/AAAAXdJREFUOE/NU8tOwlAQ7arlC/gD+QP5AvkDXUsif4CPmBCMYnGFKzdEE42u1BVxY3ADfoEuTSSFGKKCoZgor/ZynJlrCRoWaFzY5OSemTtz5tHW8LOhRd82Xd+28EM4nGsImRwwDVwWmHQxNf6BwNCtYoTbY/h7EbkYVstQxaRwdb4gtvDrDNB1BcwN0NO/TMI7iWF4VwDaVS1AJwexoLpIaP9BlMPRz8+iR1CUIwLP+Tk4qyZq6bAE+PtREehWSpKorpJaIBeG6rjo3JfROF2Cm4toAVbiqq+7kS8Cj0fz8FrUCXFGZ8tCLTuDQYnGoJHxdPMpUFyGTyKKdsAJHMgC74cxSeCq0gEVeTlLiK9JHfCIhtdyRkvklh92qMK2Bc+hJZJoK01JBdqRU5IR2C9FKZn9RmXF1POv6bO9oV8P22+bmjdS+l5GoLO+rmObKXqNvYyFABwcgG3uZNwe54H9F1/ir/7EAI4xsENxJt8upoDpDuxQ/APMqcllHgCCmgAAAABJRU5ErkJggg==" InformativeScreenshot="39a44a7f2ac3d5f6831c975897ba4de0.jpg" Selector="&lt;html app='chrome.exe' title='DNS – интернет магазин цифровой и бытовой техники по доступным ценам.' /&gt;" Url="[strURL]" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" AutoSave="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="540,2390" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_3" KeepExcelFileOpen="True" ResizeWindow="None" WorkbookPath="Primer.xlsx">
+      <ueab:ExcelApplicationCard.Body>
+        <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Сделать" sap:VirtualizedContainerService.HintSize="506,2117" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Int32" Name="FirstCell" />
+              <Variable x:TypeArguments="x:Int32" Name="LastCell" />
+              <Variable x:TypeArguments="x:String" Default="70000" Name="strPrice" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ueab:FindFirstLastDataRowX BlankRowsToSkip="1" ColumnName="Цена, руб" ConfigureLastRowAs="LastPopulatedRow" DisplayName="Диапазон" FirstRowIndex="[FirstCell]" FirstRowOffset="0" HasHeaders="True" sap:VirtualizedContainerService.HintSize="444,309" sap2010:WorkflowViewState.IdRef="FindFirstLastDataRowX_1" LastRowIndex="[LastCell]" LastRowOffset="0" Range="[Excel.Sheet(strSity)]" />
+            <ueab:TextToColumnsX OtherSeparator="{x:Null}" ConsecutiveOperatorsAsOne="True" DestinationRange="[Excel.Sheet(strSity).Range(&quot;B&quot; + FirstCell.ToString +&quot;:B&quot; + LastCell.ToString)]" DisplayName="Text To Columns" sap:VirtualizedContainerService.HintSize="444,189" sap2010:WorkflowViewState.IdRef="TextToColumnsX_1" NumberOfCharactersPerColumn="7" ParsingType="FixedWidth" SourceRange="[Excel.Sheet(strSity).Range(&quot;B&quot; + FirstCell.ToString +&quot;:B&quot; + LastCell.ToString)]" SplitByComma="False" SplitByLineBreak="False" SplitByOther="True" SplitBySemicolon="False" SplitBySpace="False" SplitByTabs="False" TextQualifier="None" />
+            <ueab:DeleteColumnX ColumnName="C" DisplayName="Delete Column" HasHeaders="False" sap:VirtualizedContainerService.HintSize="444,162" sap2010:WorkflowViewState.IdRef="DeleteColumnX_1" Range="[Excel.Sheet(strSity)]" />
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Выделение диапазона" sap:VirtualizedContainerService.HintSize="444,233" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" InScope="[Excel]" ScopeIdentifier="Excel" Shortcuts="[d(hk)][d(ctrl)][k(end)][u(ctrl)][u(hk)][d(hk)][k(left)][u(hk)][d(hk)][d(shift)][k(pgup)][u(shift)][u(hk)][d(hk)][d(shift)][k(down)][u(shift)][u(hk)][d(hk)][d(ctrl)]q[u(ctrl)][u(hk)]" Version="V3" />
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="444,370" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Игнорируемые действия" sap:VirtualizedContainerService.HintSize="400,291" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Вызов меню" sap:VirtualizedContainerService.HintSize="338,180" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" InScope="[Excel]" InteractionMode="SameAsCard" ScopeIdentifier="Excel" Shortcuts="[d(hk)][d(ctrl)]q[u(ctrl)][u(hk)]" Version="V3" />
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <uix:NClick ClickType="Single" DisplayName="Выбор условия форматирования" sap:VirtualizedContainerService.HintSize="444,158" sap2010:WorkflowViewState.IdRef="NClick_8" InScope="[Excel]" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="Excel" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="403, 58, 127, 74" DesignTimeScaleFactor="1" ElementType="ListItem" FriendlyName="'Больше'" FullSelectorArgument="&lt;wnd cls='MsoWorkPane' title='Линза для детального анализа' /&gt;&lt;wnd aaname='Линза для детального анализа' cls='NetUIHWND' /&gt;&lt;ctrl name='Линза для детального анализа' role='property page' /&gt;&lt;ctrl name='Больше' role='list item' /&gt;" FuzzySelectorArgument="&lt;wnd cls='MsoWorkPane' title='Линза для детального анализа' /&gt;&lt;wnd aaname='Линза для детального анализа' cls='NetUIHWND' /&gt;&lt;ctrl name='Линза для детального анализа' role='property page' /&gt;&lt;ctrl name='Больше' role='list item' automationid='' check:text='Больше' /&gt;" Guid="d53d5f7f-7f4a-4943-bd2d-37fee752bff8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIMAAABOCAYAAAAD66UMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKrSURBVHhe7dcxjtpAFIfx3CV34ApcgRNwgO3paVCUDkoqJHo6KkRHCV06cgHKdI7+7L6nx2QwS+xEHvON9NNiz6xZab415stgMKgAIQY4YoAjBjhigCMGOGKAIwY4YoAjBjhigCMGOGKA61UMp9Ppv8r9DSXrXQy58zKfz7Pn69T9DjF0HDE0Qww1iKFgxNAMMdQghoIRQzO9i0EbmPPrx7e/kruWEEPH1W2QNvbn969P0e/kriXE0HHE0Awx1CCGghFDMy8bQ27Nq3vpGLS+Del7lap3MeS+BopiiGx9eo1nEUNH1W2MgkjPEcMtYkjOyWazqUajUXYuRQwd1VYMk8mk2u/31XK5rIbDYXaNIYaOaisGs1gsrlFMp9PsvBBDR7Udg+jOsFqtqu12W729vf0xTwwd9S9iEN0ZDofDNYp0jhg6ShvzWbY+vUZkzw6K4N4D5aNrlKRXMTzr3kbq40DfKD7zrYIYeuLeRiqC3PNBDjH0RBsbSQw9QQy3Xj6GNuSuXaKXjgG3iAGOGOCIAY4Y4IgBjhjgiAGuuBjScTwes+vwvCJjGI/H2Tk0QwxwvYpB5+NYr9c38+fz+WPmfdh14usoPZ8eXy6XajabXV/H99Z5W1OS4p8Zdrudz2kTLADbnHTz7DjOxddRej49jjHEa+tvKPFZpug7g35qaENEI67VnSDeHeK8hl0nHbk1uWOLwd47Dr23rStF8R8TtuGPYtC8Ns/mNGIM9lr/0Xa3iedzxzGGeO1S9eLOYMca9z4m4ibb2vh7uXXxfO7YYrC5eBcqUfHPDHEDtFFx2EZp09L/XI0YQxxxzaNh76GfcfDMgKIRAxwxwBEDHDHAEQMcMcARAxwxwBEDHDHAEQMcMcARAxwxwBEDHDHAEQMcMcARAxwx4MOg+g2JhMlzHHP0kAAAAABJRU5ErkJggg==" InformativeScreenshot="6d4a229456208bb78fbbea60ff408f39.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='MsoCommandBar' title='Линза для детального анализа' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="276, 58, 127, 74" ElementType="ListItem" FriendlyName="'Набор значков'" FullSelectorArgument="&lt;wnd cls='MsoWorkPane' title='Линза для детального анализа' /&gt;&lt;wnd aaname='Линза для детального анализа' cls='NetUIHWND' /&gt;&lt;ctrl name='Линза для детального анализа' role='property page' /&gt;&lt;ctrl name='Набор значков' role='list item' /&gt;" FuzzySelectorArgument="&lt;wnd cls='MsoWorkPane' title='Линза для детального анализа' /&gt;&lt;wnd aaname='Линза для детального анализа' cls='NetUIHWND' /&gt;&lt;ctrl name='Линза для детального анализа' role='property page' /&gt;&lt;ctrl name='Набор значков' role='list item' automationid='' check:text='Набор значков' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIMAAABOCAYAAAAD66UMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALkSURBVHhe7Zk9ztpAFEWzKoqkjVJFyi5YQzZBj9JGaVgGW4AyFV06dkB0Ue7T+yaDbeTYGZvzpCPG8+N5njmMkXi32WxuAAIZIEAGCJABAmSAABkgQAYIkAECZIAAGSBABgiQAQJkgGBVMpzP51mp5bBkVidDWbff7/+qe5baPZChcbpkeP/1++3Dt5/3z7JPH8iwQLpkkAim7GPUt8T1ZV9kaBxOhnHwm2EAyLBAkGEcq5NBGzcHyNA4nAzjeBkZfnz8dPv1+cv9s+zTBzIskC4ZJIIp+xj1LXF92RcZGoeTYRz8ZhgAMiwQZBjH6mTQxs0BMjQOJ8M4XkYG/pvo52Vk4F/LfjgZBoAMC6RLhjEgwwJBhnGsToY5qeWwZFYlA4wDGSBABgiQAQJkgAAZIEAGCJABAmSAABkgQAYIkAECZIBgFhkU2+12cH0N9VNcr9dqO4yneRl2u929HxJMT/MyXC6X2+FwqLbBv6UZGbTpjtPp9KbP8Xi8fypUdpvG5sjS+NqRx5l8X4XrFTnffN2V56MxuawTzuNUl6PM36E5XT8ls8nwKPIC5v6q92LljVR40bSwLruv76fwIpZtNdRXrySVy77lda0+lx+1aY684X3557LHTEkzJ4MWJYc2xguUx+hbJfxbIrflxVbkOcuNMLqXwiKIWnTl6THlPTxGofmz1EPyd9TynoImZBAK1+sbo8Uq64U2T4s6ZDHznI9kMF1jff0oT5XLV47C91Dk14N4Jv88z5Q0IYMeVAuhOi+SH1715WvCbQovnjcqb4DH+Z61HEyep+zr6648SxQ5F5V9quU+Xfm7/FIyqKwHVmixy4d3myJ/u72AjjxG4VeAIo8zuV1zuF6R883XXXlmFB6Tyxrjufryd1jAqZlFhv+BIm8o9IMMECADBKuVAZ4HGSBABgiQAQJkgAAZIEAGCJABAmSAABkgQAYIkAECZIAAGSBABgiQAQJkgAAZ4A+b22/cnXGFjyZKQgAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Запись значения" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="444,219" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InScope="[Excel]" ScopeIdentifier="Excel" Text="[strPrice + &quot;[k(enter)]&quot;]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="14, 66, 217, 21" DesignTimeScaleFactor="1" FriendlyName="'84 999'" FullSelectorArgument="&lt;uia cls='NetUIRefedit' name='Форматировать ячейки, которые БОЛЬШЕ' /&gt;" FuzzySelectorArgument="&lt;uia cls='NetUIRefedit' name='Форматировать ячейки, которые БОЛЬШЕ' role='Поле ввода' automationid='' check:text='84 999' /&gt;" Guid="94350856-3536-4e2f-8aef-da1a5c672fc8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAN0AAAAZCAYAAAC1vSu4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALOSURBVHhe7Zy9buJAFEYdvxVFSvuZUsU05ll2k11pf5pVIiGMgBpBi0QHAiWBlp/kru/AOAOeGXtYhIX2O9JRyCgemhxdEzJ4Ly8vJH17ezO6WCycXS6XEMIjER2EFzaL7svDD3r49uusPn7/DSHcq43u/f3d6MfHh7MAXCur1YpGoxENh0Pq9/snOR6PxT4MogPAAofCsU2nU9psNtoeiuTrZrOZ2If3M0ZX9AS6sIoE4NrgCTWfz7UNuDqZTMTELBVdrVajTqdzYLfbdbbX650sAFXAt4br9Vp08C/w9bwPTztEB4AFjk52YOLm5kZoQ+7B+yE6ACwURSeDKwpP7uEUXSvyyfO8nUGcCyoO0/Uwv84myrV+vZ2F1K6XXwegCmzRHQcn1SH3cIjujgIvoFhMuRZFvk9RooSVRORzJLro4pA8P6IkfdzrtameXltvp3E1eL1ObRFa8ToAVWCKTheb6jFyjzNFl6TfhxRzXJroeMr5USIeyynG00t+VaebbR2AKiiKzvZYRe7hEF36mq61n2apQfz5mo5vK8M4fWyILj/p9reMuYlmXwegCkzRqZhCU5F7lI/u9p78NJxWNul2oalTzBhdqni9J4L1KQw/J1nDYR2AKrh4dNvtVvzg7f0mjauV/eWyEwfkBQGF+8l3oCE8VgYVNna3jqpF6wBUQWXR1e7+iFtEddJxhAdRWSad9PDWUbHEOgBVUCa6MrhHp3nLIPdenTG6WJmIITWyqBpO6wBUgSk6Od1MHnNSdNmtpWI+MLvZBDtBAKqg0kmH6MD/CP+v5Dn/97J0dCZ1JwlsAnBt8KkAPh2g+/13lY/38KkFRAeABXmejoORE89Vvo7DLXWeDtEBsAtvMBjQ8/MzPT09OdtsNsVtJe/DGKNjvz7+1H7eyanyk0EIlej4hKwMj319fRXqPhFMqvvkL5vyySCEiA7CC7ukv0OM7DGOpsEKAAAAAElFTkSuQmCC" InformativeScreenshot="d139de1b56796e76e34cfa96b1fc2706.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='NUIDialog' title='больше' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="14, 38, 237, 13" FriendlyName="'Форматировать ячейки,'" FullSelectorArgument="&lt;uia cls='NetUILabel' name='Форматировать ячейки, которые БОЛЬШЕ' /&gt;" FuzzySelectorArgument="&lt;uia cls='NetUILabel' name='Форматировать ячейки, которые БОЛЬШЕ' role='Текст' automationid='' check:fulltext='Форматировать ячейки, которые БОЛЬШЕ' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPEAAAARCAYAAAAMj0qLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARASURBVHhe7ZlrcusgDIWzKm8nXk28F3srN1lJ22QHXB4SHAlBnExf6fDjmzEGPZA4ttMe3t7e3Pv7e+Tj46Pier0+xO12GwwG38gQ8WDw4gwRDwYvzhDxYPDiDBH/AS7L5A7T4i5hvM3ucJjdptYM/i5tEa9HfxgObl5tsbawggy+motbpkPsV+zZZq0ZRC6Lm6hOmXmDNbKW+eEIxIcm2h8mt1z8HPsW/giam5ZLGseHbenVNgc//PDd3Jx9J7KdQRQxCxnFWzGvpmgtrECDwa9Ai0lA4snCJUErIUfB0b0k6C8SseXHQIqYBXxc8/Vx9Z/Uawo4nc5JqDRm8tv6fEqJTvCk4kQo6bxhcY82w0Vgoq16MgZCAWmtLIL0Y+ah4mYb437VHKaXl2qOTW0bm6saLQ5IsBP5UcN7dcBc2PZe7YJPi5YvmGOSn0Z9mus9vb6RjRYfvxWzD+Hb+FmhaoxU9Q6Qv1Ib2hfl9a0irnJJCBGvx+Bocqd/5Y0cRXxd6Ql1cmcl6PMpbeJ0LiLmZokCxwQm36CyET48VmJVwnqMB5Hm8jwXs5lHyUE0AWO0mn0vLz22wDV0HeOomM3csMm9OmQb/jwzhK9tME+k5YvumzkLOzk21z/QN8Zak2I1hMAxEFojhSTXl7jJbzd/hONrP6oupoiBen+Fh0W8omjx7RtEzdecKCYeE5jdEjYdmxQSndw8QxOMDbQ2zb7nLT0Z+ekd53XBYFwdsirHEls2dGdelQ+IxaANXUd/Km/MlQ+rINSxVwf2jfdC/J4N5ok0fHXrCXa71mtbHJMfJPjkuuC1gB4I0Z/2GcaQ3y4R09jcD81l4eLeO3HDeNebuMGuz+n0tvUJeKGKN+8TIt7iPb/pxY99gTejCWU9+FKbzr7DoQqN6hUMxt1DJGKUQj6UV8NHnAP0gUv+jE9QyjU1GfJmenWgaybn3LNB30jDV7eeYMe+u+u1LY7JT5qjuqrz06wR0olR5RbQtYnjskbYkC/z7avjKr+fJ+LOH7b07+Hu5zQFFxuMSYckKcHgIxcOm5A2wvdbm84F43s4r4pZ51H8WnMpRinkQ3k1fMS5TDmELKDsD+jlHfa44F49VR3yNT8c1GFr2tA6zKfli+6b9RR2cmyu3923Uj8UsfadaxSuGYqR14j8oC9xPe01j7XY+vkL3924O0WsbJhaxOpfTOlzmt66zJ0/bOGcTDolmRJOG09FkBuNdvTZ1tr0noKFMZP9wFom+1T3q+Z47ubV8sGxPWn/ZEPrRX6EFgTXihF7teqA13kPvgcdmxgDDm2m5QvmmLjGslP3qvVQZ0bXuWCcH7/OrBHHbcSQYiEBMVrQ/h76FD3q5W/FrVAiRkKOVi09bREDlYhb6M/pn4IK9uN5vCDxASMO9Tcy+vYUQ8SD38Po21NkEQcsATOmaDtYwQaDweczRDwYvDQ39x9tU7s76J3gPAAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <ueab:SaveExcelFileX DisplayName="Сохранение файла" sap:VirtualizedContainerService.HintSize="444,86" sap2010:WorkflowViewState.IdRef="SaveExcelFileX_1" Workbook="[Excel]" />
+          </Sequence>
+        </ActivityAction>
+      </ueab:ExcelApplicationCard.Body>
+    </ueab:ExcelApplicationCard>
+  </Sequence>
+</Activity>
